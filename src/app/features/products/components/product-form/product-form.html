@@ -1,0 +1,30 @@
+<div class="form-container">
+
+    <h2>Registrar Producto</h2>
+
+    <label>Nombre</label>
+    <input
+      type="text"
+      [(ngModel)]="nombre"
+      placeholder="Nombre del producto">
+
+    <label>Precio</label>
+    <input
+      type="number"
+      [(ngModel)]="precio"
+      placeholder="Precio del producto">
+
+      <p class="error" *ngIf="mensajeError">
+  {{ mensajeError }}
+</p>
+
+    <button (click)="guardar()">
+      Guardar
+    </button>
+
+</div>
+
+
+
+
+

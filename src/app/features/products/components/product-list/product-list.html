@@ -1,0 +1,48 @@
+<p *ngIf="productService.getProducts().length === 0">
+  No hay productos registrados.
+</p>
+
+
+<div
+  class="producto"
+  *ngFor="let producto of productService.getProducts()">
+
+  <p>ID: {{ producto.id }}</p>
+
+  <h4>Nombre: {{ producto.nombre }}</h4>
+
+  <p>Precio: {{ producto.precio }}</p>
+
+  <div class="botones">
+
+    <button
+      class="btn-eliminar"
+      (click)="eliminar(producto.id)">
+      Eliminar
+    </button>
+
+    <button
+      class="btn-detalles"
+      (click)="verDetalles(producto)">
+      Ver detalles
+    </button>
+
+  </div>
+
+  <div
+    class="detalles"
+    *ngIf="productService.selectedProduct?.id === producto.id">
+
+    <h3>Detalles</h3>
+
+    <p>ID: {{ producto.id }}</p>
+
+    <p>Nombre: {{ producto.nombre }}</p>
+
+    <p>Precio: {{ producto.precio }}</p>
+
+  </div>
+
+</div>
+
+<app-product-card></app-product-card>
