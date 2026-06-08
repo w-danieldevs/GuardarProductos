@@ -18,7 +18,8 @@
   {{ mensajeError }}
 </p>
 
-    <button (click)="guardar()">
+    <button (click)="guardar()"
+     [disabled]="!formularioValido()">
       Guardar
     </button>
 
